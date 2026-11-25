@@ -20,3 +20,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="angler-user 8.1.0 OPM7.181205.001 5080180 release-keys"
 
 BUILD_FINGERPRINT := google/angler/angler:8.1.0/OPM7.181205.001/5080180:user/release-keys
+
+# EclipseX common product layer (first-party suite, EclipseX Home, debloat).
+# -if-exists so this file also parses before `repo sync` pulls common.
+$(call inherit-product-if-exists, vendor/eclipsex/common/eclipsex.mk)
